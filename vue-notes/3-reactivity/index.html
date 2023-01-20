@@ -14,25 +14,14 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    <div id="app">
-      <div class="row mt-5">
-        <div class="col-4 offset-4">
-          <h3>Events</h3>
-          <!-- We can use @input="update in here" / v-bind:value or :value -->
-          <input
-            v-on:input="updateValue"
-            type="text"
-            class="form-control"
-            :value="fullName"
-          />
-          <!-- Two way binding / Directives | if we add v-model directive, we can delete v-on and v-bind -->
-          <input
-            v-model = "fullName"
-             type="text" 
-             class="form-control" 
-          />
-          {{ fullName }}
-          <button class="btn btn-success">Add</button>
+    <div id="app" class="container">
+      <div class="row">
+        <div class="col-4 offset-4 p-2 card">
+          <input type="text" v-model="search" />
+          <!-- @keydown.enter="func" => when we press enter, it executes func() -->
+          <button class="btn btn-success" @click="searchList" >Search</button> 
+          <pre class="mt-3">{{ itemList }}</pre>
+          <pre class="mt-3">{{ filteredList }}</pre>
         </div>
       </div>
     </div>
