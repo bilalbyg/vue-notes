@@ -1,0 +1,15 @@
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.container {
+    width: min-content;
+    height: min-content;
+    padding: 5%;
+    margin : 5%;
+    background-color: grey;
+}
